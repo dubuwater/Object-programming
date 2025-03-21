@@ -1,0 +1,134 @@
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+bool average(int a[], int size, int& avg) {
+	int sum = 0;
+	if (size<=0)
+	{
+		return false;
+	}
+	else
+	{
+		for (int i = 0; i < size; i++)
+		{
+			sum += a[i];
+		}
+		avg = sum / size;
+
+		return true;
+	}
+}
+
+bool bigger(int a, int b, int& big) {
+	if (a==b)
+	{
+		return true;
+	}
+	else
+	{
+		if (a>b)
+		{
+			big = a;
+		}
+		else
+		{
+			big = b;
+		}
+		return false;
+	}
+}
+
+char& find(char a[], char c, bool& success) {
+	for (int i = 0; i < strlen(a); i++)
+	{
+		if (a[i]==c)
+		{
+			success = true;
+			return a[i];
+		}
+		else
+		{
+			success = false;
+		}
+	}
+}
+
+int main() {
+	//1번예제
+	/*
+	int M[3][3] = { {1,2,3},{4,5,6},{7,8,9} };
+
+	int(*ptr)[3]; int* p; int** pt;
+
+	ptr = M;
+	cout << ptr << M;
+	cout << ptr + 1 << M + 1;
+	cout << *(ptr + 1) << ptr[1] << *(M + 1) << M[1];
+	cout << **(ptr + 1) << **(M + 1) << *M[1] << M[1][0];
+	p = M[0];
+	cout << p << M[0] << *M;
+	cout << p + 1 << M[0] + 1 << *M + 1;
+	cout << *(p + 1) << *(M[0] + 1) << *(*M + 1);
+	pt = &p; 
+	cout << *pt << p;
+	cout << **pt << *p;
+	*/
+
+	//2번예제
+	
+	int x[] = { 0,1,2,3,4,5 };
+	int avg;
+
+	if (average(x, 6, avg) == true)
+	{
+		cout << "평균은" << avg << endl;
+	}
+	else
+	{
+		cout << "매개 변수 오류" << endl;
+	}
+
+	if (average(x, 0, avg) == true)
+	{
+		cout << "평균은" << avg << endl;
+	}
+	else
+	{
+		cout << "매개 변수 오류" << endl;
+	}
+	
+
+	//3번예제
+	/*
+	int x, y, big;
+	bool b;
+	cout << "두 정수를 입력하세요>>";
+	cin >> x >> y;
+	b = bigger(x, y, big);
+
+	if (b)
+	{
+		cout << "same" << endl;
+	}
+	else
+	{
+		cout << "큰 수는" << big << endl;
+	}
+	*/
+
+	//4번예제
+	/*
+	char s[] = "mike";
+	bool b = false;
+	char& loc = find(s, 'M', b);
+
+	if (b==false)
+	{
+		cout << "M을 발견할 수 없다" << endl;
+		return 0;
+	}
+	loc = 'm';
+	cout << s << endl;
+	*/
+}
