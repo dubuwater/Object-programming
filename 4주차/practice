@@ -1,0 +1,173 @@
+#include <iostream>
+using namespace std;
+
+//1번 예제
+
+void f(char c = ' ', int line = 1);
+
+void f(char c, int line) {
+	for (int j = 0; j < line; j++)
+	{
+		for (int i = 0; i < 10; i++)
+		{
+			printf("%c", c);
+		}
+		printf("\n");
+	}
+}
+
+int main() {
+	f();
+	f('%');
+	f('@', 5);
+}
+
+
+//2-1번 예제
+/*
+int big(int a, int b) {
+	int max = 100;
+	if (a > b)
+	{
+		if (a > max)
+		{
+			return max;
+		}
+		else
+		{
+			return a;
+		}
+	}
+	else if (b > a)
+	{
+		if (b > max)
+		{
+			return max;
+		}
+		else
+		{
+			return b;
+		}
+	}
+	else
+	{
+		return 0;
+	}
+}
+
+int big(int a, int b, int max) {
+	if (a > b)
+	{
+		if (a>max)
+		{
+			return max;
+		}
+		else
+		{
+			return a;
+		}
+	}
+	else if (b > a)
+	{
+		if (b>max)
+		{
+			return max;
+		}
+		else
+		{
+			return b;
+		}
+	}
+	else
+	{
+		return 0;
+	}
+}
+
+
+//2-2번 예제
+
+int big(int a, int b, int max=100) {
+	if (a > b)
+	{
+		if (a > max)
+		{
+			return max;
+		}
+		else
+		{
+			return a;
+		}
+	}
+	else if (b > a)
+	{
+		if (b > max)
+		{
+			return max;
+		}
+		else
+		{
+			return b;
+		}
+	}
+	else
+	{
+		return 0;
+	}
+}
+
+int main() {
+	int x = big(3, 5);
+	int y = big(300, 60);
+	int z = big(30, 60, 50);
+	cout << x << ' ' << y << ' ' << z << endl;
+}
+*/
+//3번 예제
+/*
+template <class T>
+double add(T a[], int size) {
+	double sum = 0;
+	for (int i = 0; i < size; i++)
+	{
+		sum += a[i];
+	}
+
+	return sum;
+}
+
+int main() {
+	int x[] = { 1,2,3,4,5 };
+	double d[] = { 1.2, 2.3, 3.4, 4.5, 5.6, 6.7 };
+
+	cout << "sum of x[] = " << add(x, 5) << endl;
+	cout << "sum of d[] = " << add(d, 6) << endl;
+}
+*/
+
+//4번 예제
+/*
+template <class T>
+void reverseArray(T *a, int size) {
+	T temp[5] = {};
+	for (int i = 0; i < size; i++)
+	{
+		temp[i] = a[size - i - 1];
+	}
+	for (int j = 0; j < size; j++)
+	{
+		a[j] = temp[j];
+	}
+}
+
+int main() {
+	int x[] = { 1,10,100,5,4 };
+	reverseArray(x, 5);
+
+	for (int i = 0; i < 5; i++)
+	{
+		cout << x[i] << ' ';
+	}
+	cout << endl;
+}
+*/
